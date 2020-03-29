@@ -40,10 +40,10 @@ sourceSets {
 	}
 }
 
-apply from: "${projectDir}/gradle/checkstyle.gradle"
-apply from: "${projectDir}/gradle/git-hooks.gradle"
-apply from: "${projectDir}/gradle/pmd.gradle"
-apply from: "${projectDir}/gradle/jacoco.gradle"
+//apply from: "${projectDir}/gradle/checkstyle.gradle"
+//apply from: "${projectDir}/gradle/git-hooks.gradle"
+//apply from: "${projectDir}/gradle/pmd.gradle"
+//apply from: "${projectDir}/gradle/jacoco.gradle"
 
 
 // GitHub package repository configuration
