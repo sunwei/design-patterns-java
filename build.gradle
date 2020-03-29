@@ -54,8 +54,8 @@ publishing {
 			name = "GitHubPackages"
 			url = uri("https://maven.pkg.github.com/sunwei/design-patterns-java")
 			credentials {
-				username = project.findProperty("gpr.user") ?: System.getProperty("USERNAME")
-				password = project.findProperty("gpr.password") ?: System.getProperty("PASSWORD")
+				username = System.getenv("USERNAME") ?: System.getProperty("USERNAME")
+				password = System.getenv("PASSWORD") ?: System.getProperty("PASSWORD")
 			}
 		}
 	}
