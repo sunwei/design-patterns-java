@@ -18,3 +18,6 @@ gradle-version:
 # example: make tag tag_version=v01-application-init
 tag:
 	git tag $(tag_version) && git push origin $(tag_version)
+
+publish:
+	./gradlew publish

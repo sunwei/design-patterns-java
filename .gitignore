@@ -37,5 +37,6 @@ dataSources/
 .DS_Store
 
 ### Gradle ###
+gradle.properties
 .gradle
 build/

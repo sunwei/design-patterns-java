@@ -1,12 +1,16 @@
 plugins {
 	id 'org.springframework.boot' version '2.2.6.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id "maven-publish"
 	id 'java'
 }
 
 group = 'xyz.sunwei'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
 sourceCompatibility = '1.8'
+archivesBaseName = 'design-patterns'
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
 
 repositories {
 	mavenCentral()
@@ -40,3 +44,31 @@ apply from: "${projectDir}/gradle/checkstyle.gradle"
 apply from: "${projectDir}/gradle/git-hooks.gradle"
 apply from: "${projectDir}/gradle/pmd.gradle"
 apply from: "${projectDir}/gradle/jacoco.gradle"
+
+
+// GitHub package repository configuration
+
+publishing {
+	repositories {
+		maven {
+			name = "GitHubPackages"
+			url = uri("https://maven.pkg.github.com/sunwei/design-patterns-java")
+			credentials {
+				username = project.findProperty("gpr.user") ?: System.getProperty("USERNAME")
+				password = project.findProperty("gpr.password") ?: System.getProperty("PASSWORD")
+			}
+		}
+	}
+	publications {
+		mavenJava(MavenPublication) {
+			versionMapping {
+				usage('java-api') {
+					fromResolutionOf('runtimeClasspath')
+				}
+				usage('java-runtime') {
+					fromResolutionResult()
+				}
+			}
+		}
+	}
+}
