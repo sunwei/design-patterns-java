@@ -22,3 +22,21 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+sourceSets {
+	main {
+		java {
+			srcDir 'src/main/java'
+		}
+	}
+	test {
+		java {
+			srcDir 'src/test/java'
+		}
+	}
+}
+
+apply from: "${projectDir}/gradle/checkstyle.gradle"
+apply from: "${projectDir}/gradle/git-hooks.gradle"
+apply from: "${projectDir}/gradle/pmd.gradle"
+apply from: "${projectDir}/gradle/jacoco.gradle"
