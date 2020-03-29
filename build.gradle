@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'xyz.sunwei'
-version = '0.0.2'
+version = '0.0.3'
 sourceCompatibility = '1.8'
 archivesBaseName = 'design-patterns'
 compileJava.options.encoding = "UTF-8"
@@ -40,10 +40,10 @@ sourceSets {
 	}
 }
 
-//apply from: "${projectDir}/gradle/checkstyle.gradle"
-//apply from: "${projectDir}/gradle/git-hooks.gradle"
-//apply from: "${projectDir}/gradle/pmd.gradle"
-//apply from: "${projectDir}/gradle/jacoco.gradle"
+apply from: "${projectDir}/gradle/checkstyle.gradle"
+apply from: "${projectDir}/gradle/git-hooks.gradle"
+apply from: "${projectDir}/gradle/pmd.gradle"
+apply from: "${projectDir}/gradle/jacoco.gradle"
 
 
 // GitHub package repository configuration
