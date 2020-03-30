@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'xyz.sunwei'
-version = '0.0.6'
+version = '0.1.0'
 sourceCompatibility = '1.8'
 archivesBaseName = 'design-patterns'
 compileJava.options.encoding = "UTF-8"
@@ -43,7 +43,6 @@ apply from: "${projectDir}/gradle/jacoco.gradle"
 
 
 // GitHub package repository configuration
-
 publishing {
 	repositories {
 		maven {
@@ -56,15 +55,8 @@ publishing {
 		}
 	}
 	publications {
-		mavenJava(MavenPublication) {
-			versionMapping {
-				usage('java-api') {
-					fromResolutionOf('runtimeClasspath')
-				}
-				usage('java-runtime') {
-					fromResolutionResult()
-				}
-			}
+		gpr(MavenPublication) {
+			from(components.java)
 		}
 	}
 }
