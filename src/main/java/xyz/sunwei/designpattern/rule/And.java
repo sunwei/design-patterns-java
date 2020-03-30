@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class And<T> implements AndRule<T> {
-    private List<Rule<T>> rules = new ArrayList<>();
+    final private List<Rule<T>> rules = new ArrayList<>();
 
     public And<T> addRule(Rule<T> rule){
         this.rules.add(rule);

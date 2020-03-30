@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Or<T> implements OrRule<T> {
-    private List<Rule<T>> rules = new ArrayList<>();
+    final private List<Rule<T>> rules = new ArrayList<>();
 
     public Or<T> addRule(Rule<T> rule){
         this.rules.add(rule);
