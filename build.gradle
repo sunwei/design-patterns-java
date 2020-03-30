@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'xyz.sunwei'
-version = '0.0.5'
+version = '0.0.6'
 sourceCompatibility = '1.8'
 archivesBaseName = 'design-patterns'
 compileJava.options.encoding = "UTF-8"

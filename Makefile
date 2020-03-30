@@ -1,4 +1,4 @@
-tag_version ?= v02-library-base-infrastructure
+tag_version ?= v03-add-pipeline
 
 run:
 	spring_profiles_active=local ./gradlew bootRun
