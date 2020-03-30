@@ -1,4 +1,4 @@
-package xyz.sunwei.designpattern.pipeline;
+package xyz.sunwei.designpattern;
 
 public class SourceInput {
     public final int int1;

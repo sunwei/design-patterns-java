@@ -1,5 +1,7 @@
 package xyz.sunwei.designpattern.pipeline;
 
+import xyz.sunwei.designpattern.SourceInput;
+
 import java.util.logging.Logger;
 
 public class AddIntegersStage implements Stage<SourceInput, Integer> {

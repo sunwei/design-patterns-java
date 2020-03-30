@@ -1,6 +1,7 @@
 package xyz.sunwei.designpattern.pipeline;
 
 import org.junit.jupiter.api.Test;
+import xyz.sunwei.designpattern.SourceInput;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
