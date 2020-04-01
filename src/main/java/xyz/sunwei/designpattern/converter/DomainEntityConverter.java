@@ -20,7 +20,13 @@ public class DomainEntityConverter<D> {
                 .put(item.getKey(), new Converter<D, Object>(item.getValue())));
     }
     
-    public Object convert(D domainEntity, String clsStr){
-        return this.converterMap.get(clsStr).fromDomainEntity(domainEntity);
+    public Object convert(D domainEntity, String clsStr) throws DomainEntityConverterNotFoundException {
+        Converter<D, Object> convert = this.converterMap.get(clsStr);
+        if (null == convert){
+            throw new DomainEntityConverterNotFoundException(String.format(
+                    "Domain entity converter not found for : %s", clsStr
+            ));
+        }
+        return convert.fromDomainEntity(domainEntity);
     }
 }

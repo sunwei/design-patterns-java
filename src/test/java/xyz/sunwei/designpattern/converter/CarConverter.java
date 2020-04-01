@@ -15,12 +15,9 @@ public class CarConverter extends DomainEntityConverter<Car> {
   
   private static List<Pair<String, Function<Car, Object>>> getConverters(){
     List<Pair<String, Function<Car, Object>>> converters = new ArrayList<>();
-    converters.add(new Pair<String, Function<Car, Object>>(
-            CarName.class.toString(), CarConverter::convertToCarName));
-    converters.add(new Pair<String, Function<Car, Object>>(
-            CarSeries.class.toString(), CarConverter::convertToCarSeries));
-    converters.add(new Pair<String, Function<Car, Object>>(
-            CarBrand.class.toString(), CarConverter::convertToCarBrand));
+    converters.add(new Pair<>(CarName.class.toString(), CarConverter::convertToCarName));
+    converters.add(new Pair<>(CarSeries.class.toString(), CarConverter::convertToCarSeries));
+    converters.add(new Pair<>(CarBrand.class.toString(), CarConverter::convertToCarBrand));
     return converters;
   }
 
